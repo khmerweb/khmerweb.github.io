@@ -8,6 +8,6 @@ export async function load() {
 	const pageNumber = Math.ceil(count/settings.frontend)
 	const title = "ទំព័រដើម"
 	const pageURL = '/'
-//
+
 	return { posts, count, settings, pageNumber, title, pageURL }
 }
