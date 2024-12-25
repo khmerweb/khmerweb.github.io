@@ -1,2 +1,11 @@
-<h1>Welcome to SvelteKit</h1>
-<p>Visit <a href="https://svelte.dev/docs/kit">svelte.dev/docs/kit</a> to read the documentation</p>
+<script>
+	import Layout from "$lib/component/Layout.svelte";
+	import Latest from '$lib/component/Latest.svelte'
+	let { data } = $props()
+</script>
+
+<Layout {data}>
+<section class="Index region">
+	<Latest {data} />
+</section>
+</Layout>
