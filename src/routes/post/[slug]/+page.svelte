@@ -3,22 +3,11 @@
     import Video from "$lib/component/Video.svelte"
     let { data } = $props()
     let randomPosts = $state([])
-
-    function shuffle(a) {
-        for (let i = a.length - 1; i > 0; i--) {
-            const j = Math.floor(Math.random() * (i + 1));
-            [a[i], a[j]] = [a[j], a[i]];
-        }
-    }
-
+    
     $effect(() => {
-        if((data.posts[0].categories.includes("news")) && !(data.posts[0].categories.includes("doc"))){
-            randomPosts = data.posts.slice(0,6)
-        }else{
-            shuffle(data.posts)
-            randomPosts = data.posts.slice(0,6)
-        }
+        randomPosts = data.POSTS
     })
+
     const Categories = {
         news: 'ព័ត៌មាន',
         national: 'ក្នុង​ប្រទេស',

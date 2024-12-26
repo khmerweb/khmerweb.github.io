@@ -12,4 +12,5 @@ author: សុខាវុធ
 published: true
 ---
 
-Test 1
+git config user.name "khmerweb"
+git config credential.username "khmerweb"
