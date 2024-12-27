@@ -1,6 +1,10 @@
+<script>
+    import { base } from '$app/paths'
+</script>
+
 <section class="Ad region">
-    <img src="/images/ad.jpg" alt=''/>
-    <img src="/images/ad.jpg" alt=''/>
+    <img src="{base}/images/ad.jpg" alt=''/>
+    <img src="{base}/images/ad.jpg" alt=''/>
 </section>
 
 <style>
