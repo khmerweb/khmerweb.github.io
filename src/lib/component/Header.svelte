@@ -1,10 +1,35 @@
 <!--src/lib/component/Header.svelte-->
 <script>
+    import { base } from '$app/paths'
     let { data } = $props()
+    let date = $state('')
+
+    function startTime() {
+        const today = new Date();
+        let h = today.getHours();
+        let m = today.getMinutes();
+        let s = today.getSeconds();
+        m = checkTime(m);
+        s = checkTime(s);
+        date =  h + ":" + m + ":" + s;
+        setTimeout(startTime, 1000);
+    }
+
+    function checkTime(i) {
+        if (i < 10) {i = "0" + i};  // add zero in front of numbers < 10
+        return i;
+    }
+
+    $effect(() => (
+        startTime()
+    ))
 </script>
 
 <svelte:head>
     <title>{ data.title }</title>
+    <link href="{base}/images/siteLogo.png" rel="icon" />
+	<link href="{base}/fonts/setup.css" rel="stylesheet" />
+	<link href="{base}/styles/base-frontend.css" rel="stylesheet" />
 </svelte:head>
 
 <link href="/styles/base-frontend.css" rel="stylesheet" />
@@ -22,7 +47,7 @@
             <input type='submit' value='ស្វែងរក' /> 
         </form>
         <div class='login'>
-            ចូល​ក្នុង | ចុះ​ឈ្មោះ
+            {date}
         </div>
     </header>
 </section>
@@ -63,6 +88,7 @@
     .wrapper .login{
         text-align: right;
         color: white;
+        font-size: 20px;
     }
 
     @media only screen and (max-width: 600px){

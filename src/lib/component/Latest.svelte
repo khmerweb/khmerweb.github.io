@@ -1,4 +1,5 @@
 <script>
+    import { base } from '$app/paths'
     let { data } = $props()
     const featured = data.posts.slice(0, 3)
     const posts = data.posts.slice(3)
@@ -10,10 +11,10 @@
 <section class="latest">
     <div class="panel">
         {#each featured as post}
-            <a href={`/post/${post.slug}`}>
+            <a href="{ base }/post/{post.slug}">
                 <img src={post.thumb} alt='' />
                 {#if post.videos.length>0 }
-                <img class="play-icon" src="/images/play.png" alt='' />
+                <img class="play-icon" src="{ base }/images/play.png" alt='' />
                 {/if}
                 <div class="title">{post.title}</div>
             </a>
@@ -22,14 +23,14 @@
     <div class="posts">
         {#each posts as post}
             <div class="post">
-                <a class="thumb" href="/post/{post.slug}">
+                <a class="thumb" href="{ base }/post/{post.slug}">
                     <img src={post.thumb} alt='' />
                     {#if post.videos.length>0 }
-                    <img class="play-icon" src="/images/play.png"alt=''/>
+                    <img class="play-icon" src="{ base }/images/play.png"alt=''/>
                     {/if}
                 </a>
                 <div class="title-date">
-                    <a href="/post/{post.slug}" class="title">{post.title}</a>
+                    <a href="{ base }/post/{post.slug}" class="title">{post.title}</a>
                     <div>{(new Date(post.date)).toLocaleDateString("it-IT")}</div>
                 </div>
             </div>
