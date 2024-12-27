@@ -144,7 +144,7 @@
                 <div id={ytPlayerId}></div>
                 <div class="latest-video">វីដេអូ​ចុង​ក្រោយ</div>
                 <div class="channel-logo">
-                <img src="/images/siteLogo.png" alt=''/>
+                <img src="{base}/images/siteLogo.png" alt=''/>
             </div>
             <div class="play-all">
                 <a onclick={()=>changeCategory(latestVideos, 'វីដេអូ​ចុងក្រោយ')}>លេង​វីដេអូ​ចុង​ក្រោយ</a>
