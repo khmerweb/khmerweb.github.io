@@ -32,14 +32,14 @@
 	<link href="{base}/styles/base-frontend.css" rel="stylesheet" />
 </svelte:head>
 
-<link href="/styles/base-frontend.css" rel="stylesheet" />
+<link href="{base}/styles/base-frontend.css" rel="stylesheet" />
 <section class="header">
     <header class='wrapper region'>
         <div class='logo'>
-            <a href='/'><img src='/images/siteLogo.png' alt='' /></a>
-            <a href='/'>{ data.settings.siteTitle }</a>
+            <a href='{base}/'><img src='{base}/images/siteLogo.png' alt='' /></a>
+            <a href='{base}/'>{ data.settings.siteTitle }</a>
         </div>
-        <form class='search' action="/search?/search" method="post">
+        <form class='search' action="{base}/search?/search" method="post">
             <select name='category'>
                 <option>ទាំងអស់</option>
             </select>
