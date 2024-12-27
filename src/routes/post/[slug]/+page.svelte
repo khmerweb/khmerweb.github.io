@@ -1,4 +1,5 @@
 <script>    
+    import { base } from '$app/paths'
     import Layout from "$lib/component/Layout.svelte"
     import Video from "$lib/component/Video.svelte"
     let { data } = $props()
@@ -54,10 +55,10 @@
     </div>
     <div class="sidebar">
         {#each randomPosts as post}
-            <a  href="/post/{post.slug}">
+            <a  href="{ base }/post/{post.slug}">
                 <img src={post.thumb} alt=''/>
                 {#if post.videos.length>0}
-                <img class="play-icon" src="/images/play.png" alt=''/>
+                <img class="play-icon" src="{ base }/images/play.png" alt=''/>
                 {/if}
                 <div class="title">{post.title}</div>
             </a>

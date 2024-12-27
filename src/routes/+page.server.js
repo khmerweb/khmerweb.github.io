@@ -5,13 +5,13 @@ export async function load() {
 	const settings = setup()
 	const POSTS = await getPosts()
 	const posts = POSTS.slice(0, settings.front)
-	const count = await posts.length
+	const count = await POSTS.length
 	const pageNumber = Math.ceil(count/settings.front)
 
-	const categories = ['doc']
+	const categories = ['movie', 'travel', 'doc', 'sport', 'game']
     let postsByCategory = []
 	for(let category of categories){
-		let filteredPosts = POSTS.filter((post) => (post.categories.includes(category)))
+		let filteredPosts = POSTS.filter((post) => ((post.categories.includes(category)) && !(post.categories.includes('unavailable'))))
 		postsByCategory.push(filteredPosts.slice(0, settings.playlist))
 	}
 	

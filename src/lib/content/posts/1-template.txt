@@ -1,10 +1,9 @@
 ---
-title: Test
-date: 2024-12-24T01:41:10
-thumb: ''
+title: ""
+date: 2024-12-27T21:41:10
+thumb: ""
 categories:
-  - movie
-  - Chinese
+  - sport
 videos: 
     # YouTube, YouTubePlaylist, Facebook, Dailymotion, Vimeo, OK
     - {type: YouTube, id: xxxx, status: ចប់}
@@ -12,5 +11,3 @@ author: សុខាវុធ
 published: true
 ---
 
-git config user.name "khmerweb"
-git config credential.username "khmerweb"

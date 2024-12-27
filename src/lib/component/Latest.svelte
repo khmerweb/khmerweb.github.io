@@ -19,6 +19,10 @@
 
     let latestVideos = parseVideos(data.posts)
     let category1 = parseVideos(data.postsByCategory[0])
+    let category2 = parseVideos(data.postsByCategory[1])
+    let category3 = parseVideos(data.postsByCategory[2])
+    let category4 = parseVideos(data.postsByCategory[3])
+    let category5 = parseVideos(data.postsByCategory[4])
 
     function loadVideo(playlist){
         if(playlist[0][0].type === "YouTubePlaylist"){
@@ -125,19 +129,19 @@
                 <p class="news-label">ភាពយន្ត​</p>
             </span>
             <span>
-                <img alt='' onclick={()=>changeCategory(category1, 'ដើរ​លេង​​​​​ចុង​ក្រោយ')} src={data.postsByCategory[0][0].thumb} />
+                <img alt='' onclick={()=>changeCategory(category2, 'ដើរ​លេង​​​​​ចុង​ក្រោយ')} src={data.postsByCategory[1][0].thumb} />
                 <p class="movies-label">ដើរ​លេង</p>
             </span>
             <span>
-                <img alt='' onclick={()=>changeCategory(category1, '​ពិភព​និម្មិត​ចុង​ក្រោយ')} src={data.postsByCategory[0][0].thumb} />
+                <img alt='' onclick={()=>changeCategory(category5, '​ពិភព​និម្មិត​ចុង​ក្រោយ')} src={data.postsByCategory[4][0].thumb} />
                 <p class="movies-label">ពិភព​និម្មិត</p>
             </span>
             <span>
-                <img alt='' onclick={()=>changeCategory(category1, '​កីឡា​​​ចុង​ក្រោយ')} src={data.postsByCategory[0][0].thumb} />
+                <img alt='' onclick={()=>changeCategory(category4, '​កីឡា​​​ចុង​ក្រោយ')} src={data.postsByCategory[3][0].thumb} />
                 <p class="movies-label">កីឡា</p>
             </span>
             <span>
-                <img alt='' onclick={()=>changeCategory(category1, 'ឯកសារ​​​​​ចុង​ក្រោយ')} src={data.postsByCategory[0][0].thumb} />
+                <img alt='' onclick={()=>changeCategory(category3, 'ឯកសារ​​​​​ចុង​ក្រោយ')} src={data.postsByCategory[2][0].thumb} />
                 <p class="movies-label">ឯកសារ</p>
             </span>
             <div class="wrapper">
