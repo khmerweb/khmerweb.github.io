@@ -18,20 +18,37 @@ export async function load({ params }) {
 			posts = Posts.filter((p) => (!(p.categories.includes("news")) && !(p.slug === post.slug )))
 		}
 
-		function shuffle(a) {
-			for (let i = a.length - 1; i > 0; i--) {
-				const j = Math.floor(Math.random() * (i + 1));
-				[a[i], a[j]] = [a[j], a[i]];
-			}
-		}
-
 		let POSTS = []
+
+		function randomPost(){
+			let indexes = []
+			const randomPosts = []
+			let maxPosts = 6
+			if(posts.length < 6){
+				maxPosts = posts.length
+			}
+
+			while(true){
+    			const ranIndex = Math.floor(Math.random()*posts.length)
+    			if(!(indexes.includes(ranIndex))){
+        			if(post.slug !== posts[ranIndex].slug){
+            			indexes.push(ranIndex)
+            			randomPosts.push(posts[ranIndex])
+            			if(randomPosts.length === maxPosts){
+                			break
+            			}
+        			}
+    			}
+    			continue
+			}
+
+			return randomPosts
+		}
 
 		if((posts[0].categories.includes("news")) && !(posts[0].categories.includes("doc"))){
             POSTS = posts.slice(0,6)
         }else{
-            shuffle(posts)
-            POSTS = posts.slice(0,6)
+            POSTS = randomPost()
         }
 		
 		const title = post.title

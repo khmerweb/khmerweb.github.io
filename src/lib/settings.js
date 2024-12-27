@@ -7,7 +7,7 @@ function setup(){
         description: 'description',
         dashboard: 10,
         frontend: 20,
-        categories: 20,
+        category: 20,
         thumb: '',
         date: ''
     }
