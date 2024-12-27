@@ -49,22 +49,40 @@ function myFunction() {
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <div class="region">
             <div data-sveltekit-reload class="topnav" class:responsive={isresponsive} id="myTopnav">
-                <a href="{ base }/" class={`home ${home}`}>ទំព័រ​ដើម</a>
+                <a href="{base}/" class={`home ${home}`}>ទំព័រ​ដើម</a>
                 <div class={`dropdown ${news}`}>
                   <button class={`dropbtn `}>ព័ត៌មាន
                     <i class="fa fa-caret-down"></i>
                   </button>
                   <div class="dropdown-content">
-                    <a href="{ base }/national/1">ក្នុង​ប្រទេស</a>
-                    <a href="{ base }/global/1">ក្រៅ​ប្រទេស</a>
+                    <a href="{base}/national/1">ក្នុង​ប្រទេស</a>
+                    <a href="{base}/global/1">ក្រៅ​ប្រទេស</a>
                   </div>
                 </div>
+                <a href="{base}/opinion/1" class={`opinion ${opinion}`}>មតិយោបល់</a>
+                <a href="{base}/doc/1" class={`doc ${doc}`}>ឯកសារ</a>
+                <a href="{base}/sport/1" class={`sport ${sport}`}>កីឡា</a>
+                <div class={`dropdown ${movie}`}>
+                  <button class={`dropbtn `}>ភាពយន្ត
+                    <i class="fa fa-caret-down"></i>
+                  </button>
+                  <div class="dropdown-content">
+                    <a href="{base}/Khmer/1">រឿង​ខ្មែរ</a>
+                    <a href="{base}/Thai/1">រឿង​ថៃ</a>
+                    <a href="{base}/Chinese/1">រឿង​ចិន</a>
+                    <a href="{base}/Korean/1">រឿង​កូរ៉េ</a>
+                    <a href="{base}/world/1">រឿង​បរទេស</a>
+                    <a href="{base}/random/1">ឥត​ព្រៀង​ទុក</a>
+                  </div>
+                </div>
+                <a href="{base}/travel/1" class={`travel ${travel}`}>ដើរ​លេង</a>
+                <a href="{base}/game/1" class={`game ${game}`}>ពិភព​និម្មិត</a>
                 <a href="javascript:void(0);" class="icon" onclick={myFunction}>
                     <i class="fa fa-bars"></i>
                 </a>
             </div>
         </div>
-    </nav>   
+    </nav>  
 </section>
 
 <style>
