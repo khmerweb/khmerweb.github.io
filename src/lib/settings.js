@@ -3,13 +3,11 @@
 function setup(){
     
     const settings = {
-        siteTitle: 'ទំព័រស្តាទិក',
+        siteTitle: 'ភាពយន្ត​ថ្មីៗ',
         description: 'description',
-        dashboard: 10,
-        frontend: 20,
+        front: 20,
         category: 20,
-        thumb: '',
-        date: ''
+        playlist: 20,
     }
     
     
