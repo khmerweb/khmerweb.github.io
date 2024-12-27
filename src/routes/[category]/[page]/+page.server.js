@@ -3,15 +3,47 @@ import setup from '$lib/settings.js'
 
 export async function load({ params }) {
 	const settings = setup()
-    const posts = (await getPosts()).slice(0, settings.tag)
-    const count = await posts.length
-	const pageNumber = Math.ceil(count/settings.frontend)
+    const POSTS = await getPosts()
+	const postsByCategory = POSTS.filter((p) => (p.categories.includes(params.category)))
+	const posts = postsByCategory.slice((params.page - 1) * settings.category)
+    const count = postsByCategory.length
+	const pageNumber = Math.ceil(count/settings.category)
 	const title = params.category
-	const pageURL = ''
 	const category = params.category
-	const page = params.page
+	const currentPage = params.page
+	
+	let pageURL
+    if(params.category === 'news'){
+        pageURL = 'news'
+    }else if(params.category === 'national'){
+        pageURL = 'news'
+    }else if(params.category === 'global'){
+        pageURL = 'news'
+    }else if(params.category === 'opinion'){
+        pageURL = 'opinion'
+    }else if(params.category === 'doc'){
+        pageURL = 'doc'
+    }else if(params.category === 'sport'){
+        pageURL = 'sport'
+    }else if(params.category === 'Khmer'){
+        pageURL = 'movie'
+    }else if(params.category === 'Thai'){
+        pageURL = 'movie'
+    }else if(params.category === 'Chinese'){
+        pageURL = 'movie'
+    }else if(params.category === 'Korean'){
+        pageURL = 'movie'
+    }else if(params.category === 'world'){
+        pageURL = 'movie'
+    }else if(params.category === 'movie'){
+        pageURL = 'movie'
+    }else if(params.category === 'travel'){
+        pageURL = 'travel'
+    }else if(params.category === 'game'){
+        pageURL = 'game'
+    }
 
-	return { posts, count, settings, pageNumber, title, pageURL, category, page }
+	return { posts, count, settings, pageNumber, title, pageURL, category }
 }
 
 export async function entries() {
