@@ -14,9 +14,6 @@
 <section class="Post region">
     <div class="main">
         <h3 class="title">{data.page.title}</h3>
-        <div class="author">
-            <span>​​​​​​​​​​ចុះ​ផ្សាយ​ដោយៈ {data.page.author}</span>
-        </div>
         <div class="content">
             <data.page.content />
         </div>
@@ -53,12 +50,6 @@
 .Post .main .title{
     font: 18px/1.5 Oswald, Koulen;
     margin-bottom: 20px;
-}
-.Post .main .categories span:nth-child(2){
-    float: right;
-}
-.Post .main .author{
-    padding-bottom: 0px;
 }
 .Post .main .content{
     margin: 20px 0;

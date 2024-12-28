@@ -30,19 +30,16 @@
     <link href="{base}/images/siteLogo.png" rel="icon" />
 	<link href="{base}/fonts/setup.css" rel="stylesheet" />
 	<link href="{base}/styles/base-frontend.css" rel="stylesheet" />
+    <link href="{base}/styles/base-frontend.css" rel="stylesheet" />
 </svelte:head>
 
-<link href="{base}/styles/base-frontend.css" rel="stylesheet" />
 <section class="header">
     <header class='wrapper region'>
         <div class='logo'>
             <a href='{base}/'><img src='{base}/images/siteLogo.png' alt='' /></a>
             <a href='{base}/'>{ data.settings.siteTitle }</a>
         </div>
-        <form class='search' action="{base}/search?/search" method="post">
-            <select name='category'>
-                <option>ទាំងអស់</option>
-            </select>
+        <form class='search' action="{base}/search" method="get">
             <input type='text' name='q' placeholder='សរសេរ​ពាក្យ​ត្រូវ​ស្វែងរក...' required />
             <input type='submit' value='ស្វែងរក' /> 
         </form>
@@ -77,9 +74,9 @@
     }
     .wrapper .search{
         display: grid;
-        grid-template-columns: 70px auto 15%;
+        grid-template-columns: auto 15%;
     }
-    .wrapper .search input, .wrapper .search select{
+    .wrapper .search input{
         font: var(--body-font);
     }
     .wrapper .search [name='q']{
