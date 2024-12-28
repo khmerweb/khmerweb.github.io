@@ -77,6 +77,8 @@ function myFunction() {
                 </div>
                 <a href="{base}/travel/1" class={`travel ${travel}`}>ដើរ​លេង</a>
                 <a href="{base}/game/1" class={`game ${game}`}>ពិភព​និម្មិត</a>
+                <a href="{base}/page/contact" class={`contact ${contact}`}>ទំនាក់ទំនង</a>
+                <a href="{base}/page/about" class={`about ${about}`}>អំពី​យើង​ខ្ញុំ</a>
                 <a href="javascript:void(0);" class="icon" onclick={myFunction}>
                     <i class="fa fa-bars"></i>
                 </a>

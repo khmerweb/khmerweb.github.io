@@ -4,8 +4,40 @@ import setup from '$lib/settings.js'
 export async function load({ params }) {
 	const settings = setup()
     const POSTS = await getPosts()
-	const postsByCategory = POSTS.filter((p) => (p.categories.includes(params.category)))
-	const posts = postsByCategory.slice((params.page - 1) * settings.category)
+	let postsByCategory = []
+    let posts = []
+
+    function randomPost(posts){
+        let indexes = []
+        const randomPosts = []
+        let maxPosts = settings.category
+        if(posts.length < settings.category){
+            maxPosts = posts.length
+        }
+
+        while(true){
+            const ranIndex = Math.floor(Math.random()*posts.length)
+            if(!(indexes.includes(ranIndex))){
+                indexes.push(ranIndex)
+                randomPosts.push(posts[ranIndex])
+                if(randomPosts.length === maxPosts){
+                    break
+                }
+            }
+            continue
+        }
+
+        return randomPosts
+    }
+
+    if(params.category === "random"){
+        postsByCategory = POSTS.filter((p) => (p.categories.includes('movie')))
+        posts = randomPost(postsByCategory)
+    }else{
+        postsByCategory = POSTS.filter((p) => (p.categories.includes(params.category)))
+	    posts = postsByCategory.slice((params.page - 1) * settings.category, params.page * settings.category)
+    }
+    
     const count = postsByCategory.length
 	const pageNumber = Math.ceil(count/settings.category)
 	const title = params.category
@@ -37,13 +69,15 @@ export async function load({ params }) {
         pageURL = 'movie'
     }else if(params.category === 'movie'){
         pageURL = 'movie'
+    }else if(params.category === 'random'){
+        pageURL = 'movie'
     }else if(params.category === 'travel'){
         pageURL = 'travel'
     }else if(params.category === 'game'){
         pageURL = 'game'
     }
 
-	return { posts, count, settings, pageNumber, title, pageURL, category }
+	return { posts, count, settings, pageNumber, title, pageURL, category, currentPage }
 }
 
 export async function entries() {

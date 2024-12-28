@@ -8,7 +8,7 @@
 
 <style>
     .Footer{
-        padding-top: 50px;
+        padding-top: 30px;
     }
     .Footer .wrapper{
         text-align: center;

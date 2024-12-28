@@ -3,7 +3,7 @@
 function setup(){
     
     const settings = {
-        siteTitle: 'ភាពយន្ត​ថ្មីៗ',
+        siteTitle: 'វីដេអូ​យើង',
         description: 'description',
         front: 20,
         category: 20,
