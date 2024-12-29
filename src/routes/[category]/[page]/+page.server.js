@@ -7,36 +7,8 @@ export async function load({ params }) {
 	let postsByCategory = []
     let posts = []
 
-    function randomPost(posts){
-        let indexes = []
-        const randomPosts = []
-        let maxPosts = settings.category
-        if(posts.length < settings.category){
-            maxPosts = posts.length
-        }
-
-        while(true){
-            const ranIndex = Math.floor(Math.random()*posts.length)
-            if(!(indexes.includes(ranIndex))){
-                indexes.push(ranIndex)
-                randomPosts.push(posts[ranIndex])
-                if(randomPosts.length === maxPosts){
-                    break
-                }
-            }
-            continue
-        }
-
-        return randomPosts
-    }
-
-    if(params.category === "random"){
-        postsByCategory = POSTS.filter((p) => (p.categories.includes('movie')))
-        posts = randomPost(postsByCategory)
-    }else{
-        postsByCategory = POSTS.filter((p) => (p.categories.includes(params.category)))
-	    posts = postsByCategory.slice((params.page - 1) * settings.category, params.page * settings.category)
-    }
+    postsByCategory = POSTS.filter((p) => (p.categories.includes(params.category)))
+	posts = postsByCategory.slice((params.page - 1) * settings.category, params.page * settings.category)
     
     const count = postsByCategory.length
 	const pageNumber = Math.ceil(count/settings.category)

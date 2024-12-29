@@ -72,7 +72,7 @@ function myFunction() {
                     <a href="{base}/Chinese/1">រឿង​ចិន</a>
                     <a href="{base}/Korean/1">រឿង​កូរ៉េ</a>
                     <a href="{base}/world/1">រឿង​បរទេស</a>
-                    <a href="{base}/random/1">ឥត​ព្រៀង​ទុក</a>
+                    <a href="{base}/random">ឥត​ព្រៀង​ទុក</a>
                   </div>
                 </div>
                 <a href="{base}/travel/1" class={`travel ${travel}`}>ដើរ​លេង</a>
