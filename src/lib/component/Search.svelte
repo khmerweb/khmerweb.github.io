@@ -2,7 +2,13 @@
 	import { base } from '$app/paths'
     import Fuse from 'fuse.js'
     let { data } = $props()
+    let posts = $state([])
     let items = $state([])
+    let pageNumber = $state(0)
+
+    function updatePage(page){
+        items = posts.slice((page - 1) * data.settings.category, page * data.settings.category)
+    }
     
     const options = {
 	    keys: ['title'],
@@ -11,17 +17,20 @@
 	    threshold: 0.2,
     }
     
-    $effect(() => {
+    $effect(async () => {
+        
         const searchParams = new URLSearchParams(document.location.search)
         const q = searchParams.get('q')
 
         const fuse = new Fuse(data.posts, options)
-        const posts = fuse
-                        .search(q)
-                        .map((result) => result.item)
+        posts = await fuse
+                    .search(q)
+                    .map((result) => result.item)
 
         posts.sort((a, b)=>new Date(b.date).getTime() - new Date(a.date).getTime())
+        pageNumber = Math.ceil(posts.length/data.settings.category)
         items = posts.slice(0,20)
+    
     })
     
 </script>
@@ -29,21 +38,29 @@
 <section class="Category region">
     <div class="container">
         {#each items as post}
-            <div class="wrapper">
-                <a href="{base}/post/{post.slug}">
-                    <img src={post.thumb} alt=''/>
-                    {#if post.videos.length}
-                    <img class="play-icon" src="{base}/images/play.png" alt=''/>
-                    {/if}
-                </a>
-                <div class="date">{(new Date(post.date)).toLocaleDateString('it-IT')}</div>
-                <a class="title" href="{base}/post/{post.slug}">
-                    <div >{post.title}</div>
-                </a>
-            </div>
+        <div class="wrapper">
+            <a href="{base}/post/{post.slug}">
+                <img src={post.thumb} alt=''/>
+                {#if post.videos.length}
+                <img class="play-icon" src="{base}/images/play.png" alt=''/>
+                {/if}
+            </a>
+            <div class="date">{(new Date(post.date)).toLocaleDateString('it-IT')}</div>
+            <a class="title" href="{base}/post/{post.slug}">
+                <div >{post.title}</div>
+            </a>
+        </div>
         {/each}
     </div>
-    
+    <div class="pagination">
+        <span>ទំព័រ </span>
+        <select onchange={(event)=>updatePage(event.target.value)}>
+            {#each [...Array(pageNumber).keys()] as page}
+                <option>{page+1}</option>
+            {/each}
+        </select>
+        <span> នៃ {pageNumber}</span>
+    </div>
 </section>
 
 <style>
