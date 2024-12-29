@@ -3,11 +3,20 @@
     import Layout from "$lib/component/Layout.svelte"
     let { data } = $props()
     let randomPosts = $state([])
+    let currentPage = $state(1)
 
     $effect(() => {
         randomPosts = data.posts
+        const searchParams = new URLSearchParams(document.location.search)
+        currentPage = parseInt(searchParams.get('page'))
     })
 
+    let url = ''
+    if(data.category){
+        url = `${ base }/${data.category}/`
+    }else{
+        url = `${ base }/`
+    }
 </script>
 
 <Layout {data} >
@@ -31,9 +40,9 @@
     </div>
     <div class="pagination">
         <span>ទំព័រ </span>
-        <select onchange={(event)=>document.location = url + event.target.value}>
+        <select onchange={(event)=>document.location = url+`?page=`+event.target.value}>
             {#each [...Array(data.pageNumber).keys()] as page}
-                {#if page+1 == data.currentPage}
+                {#if page+1 == currentPage}
                 <option selected>{page+1}</option>
                 {:else}
                 <option>{page+1}</option>
