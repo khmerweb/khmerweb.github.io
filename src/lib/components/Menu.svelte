@@ -58,40 +58,40 @@ function myFunction() {
                     <i class="fa fa-caret-down"></i>
                   </button>
                   <div class="dropdown-content">
-                    <a href="/national/1">ក្នុង​ប្រទេស</a>
-                    <a href="/global/1">ក្រៅ​ប្រទេស</a>
+                    <a href="/">ក្នុង​ប្រទេស</a>
+                    <a href="/">ក្រៅ​ប្រទេស</a>
                   </div>
                 </div>
-                <a href="/opinion/1" class={`opinion ${opinion}`}>មតិ​យោបល់</a>
-                <a href="/doc/1" class={`doc ${doc}`}>ឯកសារ</a>
-                <a href="/sport/1" class={`sport ${sport}`}>កីឡា</a>
+                <a href="/" class={`opinion ${opinion}`}>មតិ​យោបល់</a>
+                <a href="/" class={`doc ${doc}`}>ឯកសារ</a>
+                <a href="/" class={`sport ${sport}`}>កីឡា</a>
                 <div class={`dropdown ${movie}`}>
                   <button class={`dropbtn ${movie}`}>ភាពយន្ត
                     <i class="fa fa-caret-down"></i>
                   </button>
                   <div class="dropdown-content">
-                    <a href="/Khmer/1">រឿង​ខ្មែរ</a>
-                    <a href="/Thai/1">រឿង​ថៃ</a>
-                    <a href="/Chinese/1">រឿង​ចិន</a>
-                    <a href="/Korean/1">រឿង​កូរ៉េ</a>
-                    <a href="/world/1">​រឿង​បរទេស</a>
-                    <a href="/movie/1">​ឥត​ព្រៀង​ទុក</a>
+                    <a href="/">រឿង​ខ្មែរ</a>
+                    <a href="/">រឿង​ថៃ</a>
+                    <a href="/">រឿង​ចិន</a>
+                    <a href="/">រឿង​កូរ៉េ</a>
+                    <a href="/">​រឿង​បរទេស</a>
+                    <a href="/">​ឥត​ព្រៀង​ទុក</a>
                   </div>
                 </div>
-                <a href="/travel/1" class={`travel ${travel}`}>ដើរ​លេង</a>
-                <a href="/game/1" class={`game ${game}`}>ពិភព​និមិ្មត</a>
+                <a href="/" class={`travel ${travel}`}>ដើរ​លេង</a>
+                <a href="/" class={`game ${game}`}>ពិភព​និមិ្មត</a>
                 <div class={`dropdown ${entertainment}`}>
                   <button class={`dropbtn ${entertainment}`}>កំសាន្ត
                     <i class="fa fa-caret-down"></i>
                   </button>
                   <div class="dropdown-content">
-                    <a href="/food/1">មុខ​ម្ហូប</a>
-                    <a href="/music/1">របាំតន្ត្រី</a>
-                    <a href="/distraction/1">ល្បែង​កំសាន្ត</a>
+                    <a href="/">មុខ​ម្ហូប</a>
+                    <a href="/">របាំតន្ត្រី</a>
+                    <a href="/">ល្បែង​កំសាន្ត</a>
                   </div>
                 </div>
-                <a href="/page/66b17b1e944f187d47506cda" class={`contact ${contact}`}>ទំនាក់ទំនង</a>
-                <a href="/page/66b17b48944f187d47506cdc" class={`about ${about}`}>អំពីយើង​ខ្ញុំ</a>
+                <a href="/" class={`contact ${contact}`}>ទំនាក់ទំនង</a>
+                <a href="/" class={`about ${about}`}>អំពីយើង​ខ្ញុំ</a>
                 <a href="javascript:void(0);" class="icon" onclick={myFunction}>
                     <i class="fa fa-bars"></i>
                 </a>
