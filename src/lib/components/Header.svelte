@@ -46,7 +46,7 @@
         </form>
 
         <div class="login">
-            <a href="/admin">សរសេរ​ឯកសារ</a>
+            <a href="/">សរសេរ​ឯកសារ</a>
         </div>
     </div>
 </header>
