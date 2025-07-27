@@ -6,7 +6,7 @@
 
 <svelte:head>
     <title>{ data.title }</title>
-    <script src="/scripts/ckeditor/ckeditor.js"></script>
+    <script src="/scripts/ckeditor4/ckeditor.js"></script>
     <link href="/fonts/setup.css" rel="stylesheet" />
     <link href="/styles/base-frontend.css" rel="stylesheet" />
 </svelte:head>
@@ -17,18 +17,12 @@
 		<div class="wrapper">
 			<aside>
 				<div class='inner'>
-				<a href="/amin/post"><img src="/images/movie.png" alt='' /></a>
+					<a href="/amin/post"><img src="/images/movie.png" alt='' /></a>
 					<span><a href="/admin/post">ការផ្សាយ</a></span>
-					<a href="/amin/category"><img src="/images/category.png" alt='' /></a>
-					<span><a href="/admin/category">ជំពូក</a></span>
-					<a href="/amin/page"><img src="/images/page.png" alt=''/></a>
-					<span><a href="/admin/page">ទំព័រ​ស្តាទិក</a></span>
-					<a href='/admin/upload'><img src="/images/upload.png" alt='' /></a>
-					<span><a href="/admin/upload">Upload</a></span>
-					<a href="/amin/user"><img src="/images/users.png" alt='' /></a>
-					<span><a href="/admin/user">អ្នក​និពន្ធ</a></span>
-					<a href="/amin/setting"><img src="/images/setting.png" alt='' /></a>
-					<span><a href="/admin/setting">Setting</a></span>
+					<a href="/"><img src="/images/category.png" alt='' /></a>
+					<span><a href="/">ជំពូក</a></span>
+					<a href="/"><img src="/images/page.png" alt=''/></a>
+					<span><a href="/">ទំព័រ​ស្តាទិក</a></span>
 				</div>
 			</aside>
 			<div>

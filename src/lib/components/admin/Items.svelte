@@ -47,21 +47,21 @@
     <div class="items">
         {#each items as item}
         <div class="item">
-            <a class="thumb" href="/{data.type}/{item._id}">
+            <a class="thumb" href="/{data.type}/{item.id}">
                 <img src={item.thumb} alt='' />
                 {#if item.videos?.length}
                 <img class="play" src="/images/play.png" alt='' />
                 {/if}
             </a>
             <div class="title">
-                <a href="/{data.type}/{item._id}">{item.title}</a>
+                <a href="/{data.type}/{item.id}">{item.title}</a>
                 <div>{new Date(item.date).toLocaleDateString('it-IT')}</div>
             </div>
             <div class="edit">
-				<a href="/admin/{data.type}/delete/{item._id}">
+				<a href="/admin/{data.type}/delete/{item.id}">
 					<img src="/images/delete.png" alt=''/>
 				</a>
-                <a style="padding-right:5px;" href={`/admin/${data.type}/edit/${item._id}?p=${value}`}>
+                <a style="padding-right:5px;" href={`/admin/${data.type}/edit/${item.id}?p=${value}`}>
 					<img src="/images/edit.png" alt='' />
 				</a>
             </div> 

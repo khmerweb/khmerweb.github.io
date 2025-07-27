@@ -4,6 +4,10 @@
     let { data } = $props()
     
     //const pageAmount = Math.ceil(data.count/data.settings.frontend)
+
+    $effect(() => {
+        CKEDITOR.replace( 'editor1' );
+    })
 </script>
 
 <style>

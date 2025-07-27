@@ -35,7 +35,7 @@
             </a>
             <div class='title-wrapper'>
                 <a class="title" href='/admin' aria-label="title">
-                    <h1>ផ្នែក​គ្រប់គ្រង</h1>
+                    <h1>តែង​​ឯកសារ</h1>
                 </a>
             </div>
         </div>
@@ -46,7 +46,7 @@
         </form>
 
         <div class="logout">
-            <span>{data.user.name}</span> | <a href="/">ទំព័រ​មុខ</a> | <a href="/admin/logout">ចេញ​ក្រៅ</a>
+            <a href="/">ទំព័រ​មុខ</a>
         </div>
     </div>
 </header>
@@ -103,9 +103,6 @@
             grid-template-columns: 100%;
             padding: 30px 10px;
             grid-gap: 20px;
-        }
-        header .inner .date{
-            text-align: center;
         }
     }
 </style>

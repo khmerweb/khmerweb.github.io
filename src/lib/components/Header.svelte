@@ -46,7 +46,7 @@
         </form>
 
         <div class="login">
-            <a href="/">សរសេរ​ឯកសារ</a>
+            <a href="/admin">តែង​ឯកសារ</a>
         </div>
     </div>
 </header>
@@ -66,7 +66,7 @@
     }
     header .inner{
         display: grid;
-        grid-template-columns: 30% auto 20%;
+        grid-template-columns: 38% auto 20%;
         align-items: center;
         padding: 20px 0;
     }

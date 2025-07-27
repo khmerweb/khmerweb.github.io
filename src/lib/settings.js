@@ -19,7 +19,7 @@ async function setup(locals){
         }
     }else{
         settings = {
-            siteTitle: 'ឯកសារ​',
+            siteTitle: 'កំរង​ឯកសារ​',
             description: 'description',
             dashboard: 10,
             frontend: 20,
