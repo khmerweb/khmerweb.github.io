@@ -6,8 +6,6 @@ import urid from 'urid'
 const enc = '0123456789ABCDEFGHJKMNPQRSTVWXYZ';
 function rev(ulid) { return [...ulid].map(x => enc[31 - enc.indexOf(x)]).join('')}
 
-export const prerender = false
-
 export async function load({ locals, url }) {
     const settings = await setup()
 	const POSTS = await getPosts()
