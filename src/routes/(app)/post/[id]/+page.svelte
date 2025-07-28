@@ -2,7 +2,8 @@
     import { base } from '$app/paths'
     import Layout from "$lib/components/Layout.svelte"
     import Video from "$lib/components/Video.svelte"
-  import jquery from 'jquery';
+    import { browser } from '$app/environment'
+    import jq from 'jquery';
     let { data } = $props()
     let randomPosts = $state([])
     
@@ -23,6 +24,8 @@
 
         hljs.highlightAll()
         hljs.initLineNumbersOnLoad()
+
+        jq('.Post .main .content input').attr('value','Run this code')
     })
 
 </script>
@@ -37,25 +40,6 @@
 
 <Layout {data}>
 <section class="Post region">
-    <div class="main">
-        <h3 class="title">{data.post.title}</h3>
-        <div class="categories">
-            <span>​​​​​​​​​ជំពូកៈ {data.post.categories.toString().replace(',', ', ')}</span>
-            <span>{(new Date(data.post.date)).toLocaleDateString('it-IT')}</span>
-        </div>
-        
-        {#if data.post.videos.length > 0}
-            <Video {data} />
-        {/if}
-        <div class="content">
-            {@html data.post.content }
-        </div>
-        <div class='post-bottom'>
-            
-        </div>
-        <div id="disqus_thread"></div>
-        <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-    </div>
     <div class="sidebar">
         {#each randomPosts as post}
             <a  href="{ base }/post/{post.id}">
@@ -66,7 +50,29 @@
                 <div class="title">{post.title}</div>
             </a>
         {/each}
+    </div>
+
+    <div class="main">
+        <h3 class="title">{data.post.title}</h3>
+        <div class="categories">
+            <span>​​​​​​​​​ជំពូកៈ {data.post.categories.toString().replace(',', ', ')}</span>
+            <span>{(new Date(data.post.date)).toLocaleDateString('it-IT')}</span>
+        </div>
         
+        {#if data.post.videos.length > 0}
+            <Video {data} />
+        {/if}
+        {#if browser}
+            <div class="content">
+                {@html data.post.content }
+            </div>
+        {/if}
+        
+        <div class='post-bottom'>
+            
+        </div>
+        <div id="disqus_thread"></div>
+        <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
     </div>
 
 </section>
@@ -76,7 +82,7 @@
 .Post{
     margin-top: 15px;
     display: grid;
-    grid-template-columns: 70% auto;
+    grid-template-columns: auto 70%;
     grid-gap: 15px;
     padding-bottom: 30px;
 }
@@ -95,10 +101,19 @@
 
 .Post .main .content{
     margin: 20px 0;
-    font: 14px/1.5 Courgette, Nokora;
+    font: 14px/1.5 Courgette, Handwriting;
 }
 :global(.Post .main .content img){
     width: 100%;
+}
+:global(.Post .main .content .code){
+    background: white;
+    padding: 10px 15px;
+}
+:global(.Post .main .content input){
+    width: 100%;
+    text-align: center;
+    padding: 5px;
 }
 .Post .sidebar a{
     display: block;
@@ -141,10 +156,6 @@
 .Post .main .post-bottom{
     display: grid;
     grid-template-columns: auto auto;
-}
-.Post .content .editor{
-    width: 100% !important;
-    contenteditable: true;
 }
 :global(.hljs-ln-numbers) { /* Target the line number container */
     padding-right: 10px !important; /* Adjust as needed */

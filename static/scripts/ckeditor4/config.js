@@ -38,4 +38,6 @@ CKEDITOR.editorConfig = function( config ) {
 	config.versionCheck = false;
 	config.allowedContent = true;
 	config.entities = false;
+	config.autoParagraph = false;
+	config.enterMode = CKEDITOR.ENTER_BR;
 };

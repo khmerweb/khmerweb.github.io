@@ -5,7 +5,7 @@ import matter from 'gray-matter'
 
 export async function load({ params }) {
 	try {
-		const settings = setup()
+		const settings = await setup()
 		const postModule = await import(`$lib/content/posts/${params.id}.md?raw`)
 		const { data, content } = matter(postModule.default)
 		const post = { ...data, content}
