@@ -2,6 +2,7 @@
     import { base } from '$app/paths'
     import Layout from "$lib/components/Layout.svelte"
     import Video from "$lib/components/Video.svelte"
+  import jquery from 'jquery';
     let { data } = $props()
     let randomPosts = $state([])
     
@@ -19,9 +20,20 @@
             s.setAttribute('data-timestamp', +new Date());
             (d.head || d.body).appendChild(s);
         })();
+
+        hljs.highlightAll()
+        hljs.initLineNumbersOnLoad()
     })
 
 </script>
+
+<svelte:head>
+    <link rel="stylesheet" href="/scripts/pyscript/core.css">
+    <script type="module" src="/scripts/pyscript/core.js"></script>
+    <link rel="stylesheet" href="/scripts/highlight/styles/default.css">
+    <script src="/scripts/highlight/highlight.min.js"></script>
+    <script src="/scripts/highlightjs-line-numbers.min.js"></script>
+</svelte:head>
 
 <Layout {data}>
 <section class="Post region">
@@ -130,18 +142,15 @@
     display: grid;
     grid-template-columns: auto auto;
 }
-.Post .main .post-bottom .edit{
-    text-align: right; 
+.Post .content .editor{
+    width: 100% !important;
+    contenteditable: true;
 }
-.Post .main .post-bottom .edit img{
-    width: 30px;
+:global(.hljs-ln-numbers) { /* Target the line number container */
+    padding-right: 10px !important; /* Adjust as needed */
 }
-.Post .main .social-media{
-    width: 50px;
-    display: grid;
-    grid-template-columns: auto auto;
-    grid-gap: 5px;
-    align-items: center;
+:global(.hljs-ln-code)  { /* Target the code container */
+    margin-left: 10px !important; /* Adjust as needed */
 }
 
 @media only screen and (max-width:600px){
