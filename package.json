@@ -18,9 +18,9 @@
 		"vite": "^7.0.4"
 	},
 	"dependencies": {
+		"gray-matter": "^4.0.3",
 		"jquery": "^3.7.1",
 		"mdsvex": "^0.12.6",
-		"ulid": "^3.0.1",
 		"urid": "^1.1.0"
 	}
 }

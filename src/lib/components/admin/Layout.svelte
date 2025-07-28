@@ -19,8 +19,6 @@
 				<div class='inner'>
 					<a href="/amin/post"><img src="/images/movie.png" alt='' /></a>
 					<span><a href="/admin/post">ការផ្សាយ</a></span>
-					<a href="/"><img src="/images/category.png" alt='' /></a>
-					<span><a href="/">ជំពូក</a></span>
 					<a href="/"><img src="/images/page.png" alt=''/></a>
 					<span><a href="/">ទំព័រ​ស្តាទិក</a></span>
 				</div>

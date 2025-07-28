@@ -1,17 +1,15 @@
+import matter from 'gray-matter'
 
 export async function getPosts() {
 	let posts = []
 
-	const paths = import.meta.glob('$lib/content/posts/*.md', { eager: true })
+	const paths = import.meta.glob('$lib/content/posts/*.md', { query: '?raw', import: 'default', eager: true })
 
 	for (const path in paths) {
 		const file = paths[path]
 
-		if (file && typeof file === 'object' && 'metadata' in file) {
-			const metadata = file.metadata
-			const post = { ...metadata }
-			posts.push(post)
-		}
+		const { data } = matter(file)
+		posts.push({ ...data })
 	}
 
 	posts = posts.sort((first, second) =>
