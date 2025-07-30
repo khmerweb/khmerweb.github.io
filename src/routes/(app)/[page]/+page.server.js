@@ -23,12 +23,12 @@ export async function load({ params }) {
 }
 
 export async function entries() {
-	const settings = setup()
-    const posts = await getPosts()
-	let bookTitles = [...new Set(posts.map((post) => (post.bookTitle)))]
+	const settings = await setup()
+    const POSTS = await getPosts()
+	let bookTitles = [...new Set(POSTS.map((post) => (post.bookTitle)))]
     let postByBooks = []
     for(const title of bookTitles){
-        let posts = posts.filter((post) => (post.bookTitle.includes(title)))
+        let posts = POSTS.filter((post) => (post.bookTitle.includes(title)))
         posts = posts.filter((post) => (post.bookThumb !== ''))
         postByBooks.push(posts[0])
     }
