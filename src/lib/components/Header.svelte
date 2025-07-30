@@ -97,6 +97,9 @@
     header .inner .login{
         text-align: right;
     }
+    header .inner .login a{
+        color: var(--color);
+    }
 
     @media only screen and (max-width: 600px){
         header .inner{

@@ -13,7 +13,7 @@ async function setup(locals){
             description: setting.description,
             dashboard: setting.dashboard,
             frontend: setting.frontend,
-            categories: setting.categories,
+            category: setting.categories,
             thumb: '',
             date: ''
         }
@@ -23,7 +23,7 @@ async function setup(locals){
             description: 'description',
             dashboard: 2,
             frontend: 20,
-            categories: 20,
+            category: 20,
             thumb: '',
             date: ''
         }

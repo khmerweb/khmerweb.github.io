@@ -7,15 +7,8 @@
     <div class="container">
         {#each data.posts as post}
             <div class="wrapper">
-                <a href={`/post/${post._id}`}>
-                    <img src={post.thumb} alt=""/>
-                    {#if post.videos.length}
-                    <img class="play-icon" src="/images/play.png" alt=""/>
-                    {/if}
-                </a>
-                <div class="date">{(new Date(post.date)).toLocaleDateString('it-IT')}</div>
-                <a class="title" href={`/post/${post._id}`}>
-                    <div >{post.title}</div>
+                <a href={`/post/${post.id}`}>
+                    <img src={post.bookThumb} alt=""/>
                 </a>
             </div>
         {/each}
@@ -43,29 +36,11 @@
     padding: 15px 0 30px;
 }
 .Category .container .wrapper a{
-    position: relative;
-    padding-top: 56.25%;
-    overflow: hidden;
     width: 100%;
     display: block;
 }
 .Category .container .wrapper a img{
-    position: absolute;
     width: 100%;
-    min-height: 100%;
-    top: 0;
-    left: 0;
-}
-.Category .container .wrapper a .play-icon{
-    width: auto;
-    min-height: auto;
-    width: 15%;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%)
-}
-.Category .container .wrapper .title{
-    padding-top: 0;
 }
 .Category .pagination{
     display: block;

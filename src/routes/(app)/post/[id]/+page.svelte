@@ -5,11 +5,9 @@
     import { browser } from '$app/environment'
     import jq from 'jquery';
     let { data } = $props()
-    let randomPosts = $state([])
+    let posts = data.posts
     
     $effect(() => {
-        randomPosts = data.POSTS
-
         var disqus_config = function () {
             this.page.url = `https://khmerweb.github.io/post/${data.post.id}`;  // Replace PAGE_URL with your page's canonical URL variable
             this.page.identifier = `${data.post.id}`; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
@@ -24,7 +22,6 @@
 
         hljs.highlightAll()
         hljs.initLineNumbersOnLoad()
-
         jq('.Post .main .content input').attr('value','Run this code')
     })
 
@@ -33,44 +30,48 @@
 <svelte:head>
     <link rel="stylesheet" href="/scripts/pyscript/core.css">
     <script type="module" src="/scripts/pyscript/core.js"></script>
-    <link rel="stylesheet" href="/scripts/highlight/styles/default.css">
-    <script src="/scripts/highlight/highlight.min.js"></script>
+    <link rel="stylesheet" href="/styles/highlight.css">
+    <script src="/scripts/highlight.js"></script>
     <script src="/scripts/highlightjs-line-numbers.min.js"></script>
 </svelte:head>
 
 <Layout {data}>
 <section class="Post region">
     <div class="sidebar">
-        {#each randomPosts as post}
-            <a  href="{ base }/post/{post.id}">
-                <img src={post.thumb} alt=''/>
-                {#if post.videos.length>0}
-                <img class="play-icon" src="{ base }/images/play.png" alt=''/>
-                {/if}
-                <div class="title">{post.title}</div>
-            </a>
-        {/each}
+        <h2 class='title'>{data.post.bookTitle}</h2>
+            {#each Object.entries(data.postsByChapter) as [key, value]}
+            <details open>
+                <summary>{key}</summary>
+                <ol>
+                    {#each value as post}
+                        {#if data.post.id === post.id}
+                        <li class="active"><a href="/post/{post.id}">{post.title}</a></li>
+                        {:else}
+                        <li><a href="/post/{post.id}">{post.title}</a></li>
+                        {/if}
+                    {/each}
+                </ol>
+            </details>
+            {/each}
+        
     </div>
 
     <div class="main">
         <h3 class="title">{data.post.title}</h3>
         <div class="categories">
-            <span>​​​​​​​​​ជំពូកៈ {data.post.categories.toString().replace(',', ', ')}</span>
-            <span>{(new Date(data.post.date)).toLocaleDateString('it-IT')}</span>
+            {(new Date(data.post.date)).toLocaleDateString('it-IT')}
         </div>
         
-        {#if data.post.videos.length > 0}
+        {#if (data.post.videos !=='')&&(data.post.videos !=='[]')}
             <Video {data} />
         {/if}
+        
         {#if browser}
             <div class="content">
-                {@html data.post.content }
+            {@html data.post.content }
             </div>
         {/if}
         
-        <div class='post-bottom'>
-            
-        </div>
         <div id="disqus_thread"></div>
         <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
     </div>
@@ -80,11 +81,41 @@
 
 <style>
 .Post{
-    margin-top: 15px;
+    margin-top: 10px;
     display: grid;
-    grid-template-columns: auto 70%;
-    grid-gap: 15px;
+    grid-template-columns: 30% 70%;
+    grid-gap: 0;
     padding-bottom: 30px;
+}
+.Post .sidebar{
+    background: rgb(221, 221, 221);
+    padding: 10px;
+}
+.Post .sidebar .title{
+    font: 22px / 1.5 Oswald, Koulen; 
+    padding: 5px 0 10px; 
+    color: darkgreen;
+    text-align: center;
+}
+.Post .sidebar details summary{
+    font: 20px / 1.5 Oswald, Bayon;
+    padding-top: 10px;
+}
+.Post .sidebar details ol li{
+    padding-left: 15px;
+    list-style-type: decimal;
+    list-style-position: inside;
+    font: italic 18px / 1.75 StardosStencil, Limonf3;
+}
+.Post .sidebar details ol li.active,
+.Post .sidebar details ol li.active a{
+    color: var(--link)
+}
+.Post .sidebar details ol li a{
+    color: var(--color);
+}
+.Post .sidebar a:last-child{
+    margin-bottom: 0;
 }
 .Post .main{
     background-color: var(--panel);
@@ -95,36 +126,37 @@
     font: 18px/1.5 Oswald, Koulen;
     margin-bottom: 20px;
 }
-.Post .main .categories span:nth-child(2){
-    float: right;
-}
-
 .Post .main .content{
-    margin: 20px 0;
+    padding: 20px 0;
     font: 14px/1.5 Courgette, Handwriting;
 }
 :global(.Post .main .content img){
     width: 100%;
 }
-:global(.Post .main .content .code){
+:global(.Post .main .content mark){
+    background: lightgreen;
+}
+:global(.hljs-ln-numbers) { /* Target the line number container */
+    padding-right: 10px !important; /* Adjust as needed */
+}
+:global(.hljs-ln-code)  { /* Target the code container */
+    margin-left: 10px !important; /* Adjust as needed */
+}
+:global(.Post .main .content pre){
+    padding: 15px 0 0 !important;
+}
+:global(.Post .main .content pre code){
+    font-family: Nokora;
+}
+:global(.Post .main .content pre .py-editor-box){
     background: white;
-    padding: 10px 15px;
+    padding: 0;
+    margin: 15px 0 0;
 }
 :global(.Post .main .content input){
     width: 100%;
     text-align: center;
     padding: 5px;
-}
-.Post .sidebar a{
-    display: block;
-    color: white;
-    position: relative;
-    padding-top: 56.25%;
-    overflow: hidden;
-    margin-bottom: 15px;
-}
-.Post .sidebar a:last-child{
-    margin-bottom: 0;
 }
 .Post .sidebar a img{
     position: absolute;
@@ -152,16 +184,6 @@
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
-}
-.Post .main .post-bottom{
-    display: grid;
-    grid-template-columns: auto auto;
-}
-:global(.hljs-ln-numbers) { /* Target the line number container */
-    padding-right: 10px !important; /* Adjust as needed */
-}
-:global(.hljs-ln-code)  { /* Target the code container */
-    margin-left: 10px !important; /* Adjust as needed */
 }
 
 @media only screen and (max-width:600px){

@@ -4,42 +4,17 @@ let { data } = $props()
 let isresponsive = $state(false)
 
 let home = $state('')
-let news = $state('')
-let opinion = $state('')
-let doc = $state('')
-let sport = $state('')
-let movie = $state('')
-let travel = $state('')
+let Node_js = $state('')
 let contact = $state('')
-let about = $state('')
-let game = $state('')
-let entertainment = $state('')
 
 if(data.pageURL === '/'){
     home = 'active'
-}else if(data.pageURL === 'news'){
-    news = 'active'
-}else if(data.pageURL === 'opinion'){
-  opinion = 'active'
-}else if(data.pageURL === 'doc'){
-    doc = 'active'
-}else if(data.pageURL === 'sport'){
-    sport = 'active'
-}else if(data.pageURL === 'movie'){
-    movie = 'active'
-}else if(data.pageURL === 'trvel'){
-    travel = 'active'
+}else if(data.pageURL === 'Node.js'){
+    Node_js = 'active'
 }else if(data.pageURL === 'contact'){
     contact = 'active'
-}else if(data.pageURL === 'about'){
-    about = 'active'
-}else if(data.pageURL === 'travel'){
-    travel = 'active'
-}else if(data.pageURL === 'game'){
-    game = 'active'
-}else if(data.pageURL === 'entertainment'){
-  entertainment = 'active'
 }
+
 
 function myFunction() {
   isresponsive = !isresponsive
@@ -52,46 +27,12 @@ function myFunction() {
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <div class="region">
             <div data-sveltekit-reload class="topnav" class:responsive={isresponsive} id="myTopnav">
-                <a href="/" class="home {home}">ទំព័រ​ដើម</a>
-                <div class="dropdown {news}">
-                  <button class={`dropbtn ${news}`}>ព័ត៌មាន
-                    <i class="fa fa-caret-down"></i>
-                  </button>
-                  <div class="dropdown-content">
-                    <a href="/">ក្នុង​ប្រទេស</a>
-                    <a href="/">ក្រៅ​ប្រទេស</a>
-                  </div>
-                </div>
-                <a href="/" class={`opinion ${opinion}`}>មតិ​យោបល់</a>
-                <a href="/" class={`doc ${doc}`}>ឯកសារ</a>
-                <a href="/" class={`sport ${sport}`}>កីឡា</a>
-                <div class={`dropdown ${movie}`}>
-                  <button class={`dropbtn ${movie}`}>ភាពយន្ត
-                    <i class="fa fa-caret-down"></i>
-                  </button>
-                  <div class="dropdown-content">
-                    <a href="/">រឿង​ខ្មែរ</a>
-                    <a href="/">រឿង​ថៃ</a>
-                    <a href="/">រឿង​ចិន</a>
-                    <a href="/">រឿង​កូរ៉េ</a>
-                    <a href="/">​រឿង​បរទេស</a>
-                    <a href="/">​ឥត​ព្រៀង​ទុក</a>
-                  </div>
-                </div>
-                <a href="/" class={`travel ${travel}`}>ដើរ​លេង</a>
-                <a href="/" class={`game ${game}`}>ពិភព​និមិ្មត</a>
-                <div class={`dropdown ${entertainment}`}>
-                  <button class={`dropbtn ${entertainment}`}>កំសាន្ត
-                    <i class="fa fa-caret-down"></i>
-                  </button>
-                  <div class="dropdown-content">
-                    <a href="/">មុខ​ម្ហូប</a>
-                    <a href="/">របាំតន្ត្រី</a>
-                    <a href="/">ល្បែង​កំសាន្ត</a>
-                  </div>
-                </div>
-                <a href="/" class={`contact ${contact}`}>ទំនាក់ទំនង</a>
-                <a href="/" class={`about ${about}`}>អំពីយើង​ខ្ញុំ</a>
+                <a href="/" class="home {home}">Home</a>
+                <a href="/Node.js/1" class={`Node_js ${Node_js}`}>Node.js</a>
+                <a href="/" class={`Python`}>Python</a>
+                <a href="/" class={`Multimedia`}>Multimedia</a>
+                <a href="/" class={`contact ${contact}`}>Contact</a>
+                
                 <a href="javascript:void(0);" class="icon" onclick={myFunction}>
                     <i class="fa fa-bars"></i>
                 </a>
@@ -114,7 +55,8 @@ nav{
     text-align: center;
     padding: 9px 16px;
     text-decoration: none;
-    font-size: 14px;
+    font-size: 18px;
+    font-family: Oswald, Koulen;
     color: black;
   }
   .topnav a:hover {

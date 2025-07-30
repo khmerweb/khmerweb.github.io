@@ -7,7 +7,7 @@
     --body: white;
     --panel: lightgrey;
     --body-font: 14px/1.5 Vidaloka, OdorMeanChey;
-    --link: rgb(54, 54, 54);
+    --link: #d7532c;
     --menu: rgb(177, 177, 177);
     --playlist-part:rgb(175, 175, 175);
     --playlist-color: black;
@@ -32,7 +32,7 @@ a:hover{
 }
 
 .region{
-    max-width: 1100px;
+    max-width: 1150px;
     margin: 0 auto;
 }
   

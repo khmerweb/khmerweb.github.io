@@ -1,6 +1,6 @@
 import matter from 'gray-matter'
 
-export async function getPosts() {
+export async function getPosts(order='desc') {
 	let posts = []
 
 	const paths = import.meta.glob('$lib/content/posts/*.md', { query: '?raw', import: 'default', eager: true })
@@ -12,9 +12,15 @@ export async function getPosts() {
 		posts.push({ ...data })
 	}
 
-	posts = posts.sort((first, second) =>
-    	new Date(second.date).getTime() - new Date(first.date).getTime()
-	)
+	if(order === 'asc'){
+		posts.sort((first, second) =>
+    		new Date(first.date).getTime() - new Date(second.date).getTime()
+		)
+	}else{
+		posts.sort((first, second) =>
+    		new Date(second.date).getTime() - new Date(first.date).getTime()
+		)
+	}
 	
 	return posts
 }

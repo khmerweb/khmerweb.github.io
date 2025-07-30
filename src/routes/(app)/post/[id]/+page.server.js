@@ -9,12 +9,19 @@ export async function load({ params }) {
 		const postModule = await import(`$lib/content/posts/${params.id}.md?raw`)
 		const { data, content } = matter(postModule.default)
 		const post = { ...data, content}
-		const Posts = await getPosts()
-		let POSTS = []
+		const Posts = await getPosts('asc')
 		
-		const title = post.title
+		const posts = Posts.filter((p) => (p.bookTitle === post.bookTitle))
+		let chapters = posts.map((p) => (p.bookChapter))
+		const setChapter = new Set(chapters)
+		const postsByChapter = {}
+		for(const chapter of setChapter){
+			postsByChapter[chapter] = posts.filter((p) => (p.bookChapter === chapter))
+		}
+		
+		const title = post.bookTitle
 
-		return { post, settings, POSTS, title }
+		return { post, postsByChapter, settings, title }
 	} catch (e) {
 		error(404, `Could not find ${params.id}`)
 	}
