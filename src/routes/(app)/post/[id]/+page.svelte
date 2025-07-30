@@ -92,20 +92,20 @@
     padding: 10px;
 }
 .Post .sidebar .title{
-    font: 22px / 1.5 Oswald, Koulen; 
+    font: 20px / 1.5 Oswald, Koulen; 
     padding: 5px 0 10px; 
     color: darkgreen;
     text-align: center;
 }
 .Post .sidebar details summary{
-    font: 20px / 1.5 Oswald, Bayon;
+    font: 18px / 1.5 Oswald, Bayon;
     padding-top: 10px;
 }
 .Post .sidebar details ol li{
     padding-left: 15px;
     list-style-type: decimal;
     list-style-position: inside;
-    font: italic 18px / 1.75 StardosStencil, Limonf3;
+    font: italic 16px / 1.75 StardosStencil, Limonf3;
 }
 .Post .sidebar details ol li.active,
 .Post .sidebar details ol li.active a{
@@ -157,33 +157,6 @@
     width: 100%;
     text-align: center;
     padding: 5px;
-}
-.Post .sidebar a img{
-    position: absolute;
-    width: 100%;
-    min-height: 100%;
-    top: 0;
-    left: 0;
-}
-.Post .sidebar a .play-icon{
-    width: auto;
-    min-height: auto;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    width: 15%;
-}
-.Post .sidebar a .title{
-    position: absolute;
-    bottom: 0;
-    padding: 5px 10px;
-    font: 16px/1.5 Oswald, Bayon;
-    text-shadow: 2px 2px 4px #000000;
-    background: -webkit-linear-gradient(bottom, black,transparent);
-    width: 100%;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
 }
 
 @media only screen and (max-width:600px){

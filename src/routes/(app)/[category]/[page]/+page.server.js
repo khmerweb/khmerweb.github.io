@@ -34,7 +34,14 @@ export async function entries() {
 	let arr = []
 	for(let category of categories){
 		let posts_by_category = posts.filter((p) => (p.categories.includes(category)))
-		for(let p of [...Array(Math.ceil(posts_by_category.length/settings.category)).keys()]){
+        let bookTitles = [...new Set(posts_by_category.map((post) => (post.bookTitle)))]
+        let postByBooks = []
+        for(const title of bookTitles){
+            let posts = posts_by_category.filter((post) => (post.bookTitle.includes(title)))
+            posts = posts.filter((post) => (post.bookThumb !== ''))
+            postByBooks.push(posts[0])
+        }
+		for(let p of [...Array(Math.ceil(postByBooks.length/settings.category)).keys()]){
 			arr.push({category, page: (p+1).toString()})
 		}
 	}
