@@ -11,12 +11,13 @@ export async function load({ params }) {
 		const post = { ...data, content}
 		const Posts = await getPosts('asc')
 		
-		const posts = Posts.filter((p) => (p.bookTitle === post.bookTitle))
+		const posts = Posts.filter((p) => ((p.bookTitle === post.bookTitle)&&(p.categories === post.categories)))
 		let chapters = posts.map((p) => (p.bookChapter))
 		const setChapter = new Set(chapters)
-		const postsByChapter = {}
+		const postsByChapter = new Map()
 		for(const chapter of setChapter){
-			postsByChapter[chapter] = posts.filter((p) => (p.bookChapter === chapter))
+			let _posts_ = posts.filter((p) => (p.bookChapter === chapter))
+			postsByChapter.set(chapter, _posts_)
 		}
 		
 		const title = post.bookTitle

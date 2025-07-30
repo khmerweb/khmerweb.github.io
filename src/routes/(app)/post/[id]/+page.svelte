@@ -39,7 +39,7 @@
 <section class="Post region">
     <div class="sidebar">
         <h2 class='title'>{data.post.bookTitle}</h2>
-            {#each Object.entries(data.postsByChapter) as [key, value]}
+            {#each [...data.postsByChapter] as [key, value]}
             <details open>
                 <summary>{key}</summary>
                 <ol>
