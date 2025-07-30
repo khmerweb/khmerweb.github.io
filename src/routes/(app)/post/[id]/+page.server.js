@@ -11,7 +11,7 @@ export async function load({ params }) {
 		const post = { ...data, content}
 		const Posts = await getPosts('asc')
 		
-		const posts = Posts.filter((p) => ((p.bookTitle === post.bookTitle)&&(p.categories === post.categories)))
+		const posts = Posts.filter((p) => (p.bookTitle === post.bookTitle))
 		let chapters = posts.map((p) => (p.bookChapter))
 		const setChapter = new Set(chapters)
 		const postsByChapter = new Map()
