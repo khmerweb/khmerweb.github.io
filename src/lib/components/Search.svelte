@@ -1,13 +1,35 @@
 <script>
     import Fuse from 'fuse.js'
     let { data } = $props()
-    let posts = $state(data.posts)
-    let items = $state(data.items)
-    let pageNumber = $state(data.pageNumber)
+    let posts = $state([])
+    let items = $state([])
+    let pageNumber = $state(0)
 
     function updatePage(page){
         items = posts.slice((page - 1) * data.settings.category, page * data.settings.category)
     }
+
+    const options = {
+	    keys: ['title'],
+	    includeMatches: true,
+	    minMatchCharLength: 2,
+	    threshold: 0.4,
+    }
+    
+    $effect(async () => {
+        const searchParams = new URLSearchParams(document.location.search)
+        const q = searchParams.get('q')
+
+        const fuse = new Fuse(data.posts, options)
+        posts = await fuse
+                    .search(q)
+                    .map((result) => result.item)
+
+        posts.sort((a, b)=>new Date(b.date).getTime() - new Date(a.date).getTime())
+        pageNumber = Math.ceil(posts.length/data.settings.category)
+        items = posts.slice(0,20)
+    })
+    
     
 </script>
 
