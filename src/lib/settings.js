@@ -21,7 +21,7 @@ async function setup(locals){
         settings = {
             siteTitle: 'កំរង​ឯកសារ​',
             description: 'description',
-            dashboard: 2,
+            dashboard: 10,
             frontend: 20,
             category: 20,
             thumb: '',

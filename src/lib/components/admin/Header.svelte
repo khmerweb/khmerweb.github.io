@@ -97,6 +97,9 @@
     header .inner .logout{
         text-align: right;
     }
+    header .inner .logout a{
+        color: var(--color);
+    }
 
     @media only screen and (max-width: 600px){
         header .inner{

@@ -34,7 +34,6 @@
 		}
 	}
 	
-
 </script>
 
 <footer>
@@ -48,7 +47,11 @@
         {#each items as item}
         <div class="item">
             <a class="thumb" href="/{data.type}/{item.id}">
-                <img src={item.thumb} alt='' />
+				{#if item.thumb === ''}
+                <img src="/images/noimage.png" alt='' />
+				{:else}
+				<img src={item.thumb} alt='' />
+				{/if}
                 {#if item.videos?.length}
                 <img class="play" src="/images/play.png" alt='' />
                 {/if}
@@ -146,6 +149,9 @@
         overflow: hidden;
     	text-overflow: ellipsis;
 		
+	}
+	footer .items .item .title a{
+		color: var(--color);
 	}
 	footer .items .item .edit{
     	text-align: right;

@@ -5,12 +5,18 @@ let isresponsive = $state(false)
 
 let home = $state('')
 let Node_js = $state('')
+let Python = $state('')
+let Multimedia = $state('')
 let contact = $state('')
 
 if(data.pageURL === '/'){
     home = 'active'
 }else if(data.pageURL === 'Node.js'){
     Node_js = 'active'
+}else if(data.pageURL === 'Python'){
+    Python = 'active'
+}else if(data.pageURL === 'Multimedia'){
+    Multimedia = 'active'
 }else if(data.pageURL === 'contact'){
     contact = 'active'
 }
@@ -29,8 +35,8 @@ function myFunction() {
             <div data-sveltekit-reload class="topnav" class:responsive={isresponsive} id="myTopnav">
                 <a href="/" class="home {home}">Home</a>
                 <a href="/Node.js/1" class={`Node_js ${Node_js}`}>Node.js</a>
-                <a href="/" class={`Python`}>Python</a>
-                <a href="/" class={`Multimedia`}>Multimedia</a>
+                <a href="/Python/1" class={`Python`}>Python</a>
+                <a href="/Multimedia/1" class={`Multimedia`}>Multimedia</a>
                 <a href="/" class={`contact ${contact}`}>Contact</a>
                 
                 <a href="javascript:void(0);" class="icon" onclick={myFunction}>

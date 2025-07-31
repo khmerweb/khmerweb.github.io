@@ -61,6 +61,7 @@
 	}
 	.Admin main .wrapper aside a{
 		font: 18px/1.5 Oswald, Bayon;
+		color: var(--color);
 	}
 
 	@media only screen and (max-width: 600px){

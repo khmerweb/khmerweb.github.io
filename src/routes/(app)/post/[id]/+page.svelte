@@ -40,7 +40,7 @@
     <div class="sidebar">
         <h2 class='title'>{data.post.bookTitle}</h2>
             {#each [...data.postsByChapter] as [key, value]}
-            <details open>
+            <details>
                 <summary>{key}</summary>
                 <ol>
                     {#each value as post}
