@@ -6,7 +6,7 @@
 
 <svelte:head>
     <title>{ data.title }</title>
-    <script src="/scripts/ckeditor4/ckeditor.js"></script>
+    <script src="/scripts/ckeditor/ckeditor.js"></script>
     <link href="/fonts/setup.css" rel="stylesheet" />
     <link href="/styles/base-frontend.css" rel="stylesheet" />
 </svelte:head>
