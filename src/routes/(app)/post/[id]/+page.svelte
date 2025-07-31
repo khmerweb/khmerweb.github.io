@@ -39,6 +39,7 @@
 <section class="Post region">
     <div class="sidebar">
         <h2 class='title'>{data.post.bookTitle}</h2>
+        <div class="container">
             {#each [...data.postsByChapter] as [key, value]}
             <details open>
                 <summary>{key}</summary>
@@ -53,7 +54,7 @@
                 </ol>
             </details>
             {/each}
-        
+        </div>
     </div>
 
     <div class="main">
@@ -96,6 +97,10 @@
     padding: 5px 0 10px; 
     color: darkgreen;
     text-align: center;
+}
+.Post .sidebar .container{
+    max-height: 450px;
+    overflow: auto;
 }
 .Post .sidebar details summary{
     font: 18px / 1.5 Oswald, Bayon;
