@@ -40,7 +40,7 @@
             </div>
         </div>
         
-        <form class="search" method="post" action="/search?/search">
+        <form class="search" method="get" action="/search">
             <input type="text" name="q" placeholder="Search..." required />
             <input type="submit" value="ស្វែង​រក" />
         </form>
