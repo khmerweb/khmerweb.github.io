@@ -35,8 +35,8 @@ function myFunction() {
             <div data-sveltekit-reload class="topnav" class:responsive={isresponsive} id="myTopnav">
                 <a href="/" class="home {home}">Home</a>
                 <a href="/Node.js/1" class={`Node_js ${Node_js}`}>Node.js</a>
-                <a href="/Python/1" class={`Python`}>Python</a>
-                <a href="/Multimedia/1" class={`Multimedia`}>Multimedia</a>
+                <a href="/Python/1" class={`Python ${Python}`}>Python</a>
+                <a href="/Multimedia/1" class={`Multimedia ${Multimedia}`}>Multimedia</a>
                 <a href="/" class={`contact ${contact}`}>Contact</a>
                 
                 <a href="javascript:void(0);" class="icon" onclick={myFunction}>
