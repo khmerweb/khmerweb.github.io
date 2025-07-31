@@ -30,8 +30,8 @@
 <svelte:head>
     <link rel="stylesheet" href="/scripts/pyscript/core.css">
     <script type="module" src="/scripts/pyscript/core.js"></script>
-    <link rel="stylesheet" href="/styles/highlight.css">
-    <script src="/scripts/highlight.js"></script>
+    <link rel="stylesheet" href="/scripts/highlight/styles/devibeans.css">
+    <script src="/scripts/highlight/highlight.js"></script>
     <script src="/scripts/highlightjs-line-numbers.min.js"></script>
 </svelte:head>
 
