@@ -65,9 +65,12 @@
     padding-bottom: 30px;
 }
 @media only screen and (max-width:600px){
-    .Category .container{
+    .Category .container, .Category .recent-article{
         grid-template-columns: 100%;
         padding: 30px 10px;
+    }
+    .Category .recent-article{
+        padding: 10px;
     }
 }
 </style>
