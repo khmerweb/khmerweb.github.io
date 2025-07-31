@@ -6,13 +6,20 @@
 </script>
 
 <section class="Category region">
+    <div class="recent-article">
+        {#each data.recentPosts as post}
+        <div class="wrapper">
+            <a href={`/post/${post.id}`}>{post.title}</a>
+        </div>
+        {/each}
+    </div>
     <div class="container">
         {#each data.posts as post}
-            <div class="wrapper">
-                <a href={`/post/${post.id}`}>
-                    <img src={post.bookThumb} alt=""/>
-                </a>
-            </div>
+        <div class="wrapper">
+            <a href={`/post/${post.id}`}>
+                <img src={post.bookThumb} alt=""/>
+            </a>
+        </div>
         {/each}
     </div>
     <div class="pagination">
@@ -31,15 +38,23 @@
 </section>
 
 <style>
+.Category .recent-article{
+    display: grid;
+    grid-template-columns: repeat(4, calc(100% / 4 - 11.25px));
+    grid-gap: 10px 15px;;
+    padding: 15px 0;
+}
 .Category .container{
     display: grid;
     grid-template-columns: repeat(4, calc(100% / 4 - 11.25px));
     grid-gap: 30px 15px;
     padding: 15px 0 30px;
 }
-.Category .container .wrapper a{
+.Category .container .wrapper a,
+.Category .recent-article .wrapper a{
     width: 100%;
     display: block;
+    color: var(--color);
 }
 .Category .container .wrapper a img{
     width: 100%;

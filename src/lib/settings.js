@@ -22,7 +22,7 @@ async function setup(locals){
             siteTitle: 'កំរង​ឯកសារ​',
             description: 'description',
             dashboard: 10,
-            frontend: 20,
+            frontend: 12,
             category: 20,
             thumb: '',
             date: ''

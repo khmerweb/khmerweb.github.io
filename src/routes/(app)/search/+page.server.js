@@ -1,6 +1,5 @@
 import { getPosts } from '$lib/utils/get-posts';
 import setup from '$lib/settings.js'
-import Fuse from 'fuse.js'
 
 export async function load({ url }) {
 	const settings = await setup()

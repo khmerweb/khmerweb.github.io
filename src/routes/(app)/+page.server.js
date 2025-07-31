@@ -12,6 +12,7 @@ export async function load({ locals }) {
         postByBooks.push(posts[0])
     }
 
+    const recentPosts = POSTS.slice(0, 20)
     let posts = postByBooks.slice(0, settings.frontend)
     const lastPage = Math.ceil(postByBooks.length/settings.frontend)
 
@@ -19,6 +20,7 @@ export async function load({ locals }) {
     data.currentPage = 1
     data.lastPage = lastPage
     data.posts = posts
+    data.recentPosts = recentPosts
     data.settings = settings
     data.pageURL = '/'
     data.title = 'ទំព័រដើម'
