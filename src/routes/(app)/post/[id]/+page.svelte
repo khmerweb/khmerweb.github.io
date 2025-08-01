@@ -150,7 +150,7 @@
     padding: 15px 0 0 !important;
 }
 :global(.Post .main .content pre code){
-    font-family: Nokora;
+    font-family: 14px / 1.5 Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace, Nokora;
     border-radius: 4px;
 }
 :global(.Post .main .content pre .py-editor-box){
