@@ -14,6 +14,7 @@ export async function load({ params }) {
         postByBooks.push(posts[0])
     }
     
+    postByBooks.sort((first, second) => new Date(second.date).getTime() - new Date(first.date).getTime())
 	let posts = postByBooks.slice((params.page - 1) * settings.category, params.page * settings.category)
     
     const count = postByBooks.length

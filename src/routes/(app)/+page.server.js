@@ -13,6 +13,7 @@ export async function load({ locals }) {
     }
 
     const recentPosts = POSTS.slice(0, 20)
+    postByBooks.sort((first, second) => new Date(second.date).getTime() - new Date(first.date).getTime())
     let posts = postByBooks.slice(0, settings.frontend)
     const lastPage = Math.ceil(postByBooks.length/settings.frontend)
 

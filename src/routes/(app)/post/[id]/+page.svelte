@@ -98,7 +98,7 @@
     text-align: center;
 }
 .Post .sidebar .container{
-    max-height: 450px;
+    max-height: 650px;
     overflow: auto;
 }
 .Post .sidebar details summary{
@@ -170,6 +170,9 @@
     }
     .Post .sidebar{
         padding: 0 15px;
+    }
+    .Post .sidebar .container{
+        max-height: 450px;
     }
 }
 </style>
