@@ -22,14 +22,13 @@
 
         hljs.highlightAll()
         hljs.initLineNumbersOnLoad()
-        jq('.Post .main .content input').attr('value','Run this code')
+        const myElement = document.querySelector('.Post .sidebar .container .active')
+        myElement.scrollIntoView()
     })
 
 </script>
 
 <svelte:head>
-    <link rel="stylesheet" href="/scripts/pyscript/core.css">
-    <script type="module" src="/scripts/pyscript/core.js"></script>
     <link rel="stylesheet" href="/scripts/highlight/styles/devibeans.css">
     <script src="/scripts/highlight/highlight.js"></script>
     <script src="/scripts/highlightjs-line-numbers.min.js"></script>
@@ -152,6 +151,7 @@
 }
 :global(.Post .main .content pre code){
     font-family: Nokora;
+    border-radius: 4px;
 }
 :global(.Post .main .content pre .py-editor-box){
     background: white;
