@@ -37,7 +37,7 @@ function myFunction() {
                 <a href="/Node.js/1" class={`Node_js ${Node_js}`}>Node.js</a>
                 <a href="/Python/1" class={`Python ${Python}`}>Python</a>
                 <a href="/Multimedia/1" class={`Multimedia ${Multimedia}`}>Multimedia</a>
-                <a href="/" class={`contact ${contact}`}>Contact</a>
+                <a href="/page/46644228" class={`contact ${contact}`}>Contact</a>
                 
                 <a href="javascript:void(0);" class="icon" onclick={myFunction}>
                     <i class="fa fa-bars"></i>
