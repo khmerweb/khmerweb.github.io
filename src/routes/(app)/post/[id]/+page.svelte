@@ -23,7 +23,7 @@
         hljs.highlightAll()
         hljs.initLineNumbersOnLoad()
         const myElement = document.querySelector('.Post .sidebar .container .active')
-        myElement.scrollIntoView()
+        myElement.scrollIntoView({ behavior: "smooth", block: "center" })
     })
 
 </script>
