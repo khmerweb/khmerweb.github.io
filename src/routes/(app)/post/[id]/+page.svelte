@@ -127,7 +127,7 @@
     padding: 15px;
 }
 .Post .main .title{
-    font: 18px/1.5 Oswald, Koulen;
+    font: 24px/1.5 StardosStencil, Limonf3;
     margin-bottom: 20px;
 }
 .Post .main .content{

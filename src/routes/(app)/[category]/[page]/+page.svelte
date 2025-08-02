@@ -7,4 +7,3 @@
 <Layout {data} >
     <Category {data} />
 </Layout>
-
