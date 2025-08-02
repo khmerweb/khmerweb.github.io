@@ -135,7 +135,7 @@
     font: 14px/1.5 Courgette, Handwriting;
 }
 :global(.Post .main .content img){
-    width: 100%;
+    max-width: 100%;
 }
 :global(.Post .main .content mark){
     background: lightgreen;
