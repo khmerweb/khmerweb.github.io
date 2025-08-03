@@ -90,7 +90,8 @@
 .Post .sidebar{
     background: rgb(221, 221, 221);
     padding: 10px;
-    height: 670px;
+    max-height: 100vh;
+    overflow: auto;
     position: sticky;
     top: 0;
 }
@@ -99,18 +100,6 @@
     padding: 5px 0 10px; 
     color: darkgreen;
     text-align: center;
-}
-.Post .sidebar .container{
-    max-height: 600px;
-    overflow: auto;
-}
-@-moz-document url-prefix() {
-    .Post .sidebar{
-        height: 610px;
-    }
-    .Post .sidebar .container {
-        max-height: 540px;
-    }
 }
 .Post .sidebar details summary{
     font: 18px / 1.5 Oswald, Bayon;
@@ -184,8 +173,6 @@
         padding: 0 15px;
         position: relative;
         height: auto;
-    }
-    .Post .sidebar .container{
         max-height: 450px;
     }
 }
