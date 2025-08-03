@@ -90,7 +90,7 @@
 .Post .sidebar{
     background: rgb(221, 221, 221);
     padding: 10px;
-    height: 670px;
+    height: 570px;
     position: sticky;
     top: 0;
 }
