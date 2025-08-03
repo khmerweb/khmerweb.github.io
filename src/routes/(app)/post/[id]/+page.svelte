@@ -90,6 +90,9 @@
 .Post .sidebar{
     background: rgb(221, 221, 221);
     padding: 10px;
+    height: 670px;
+    position: sticky;
+    top: 0;
 }
 .Post .sidebar .title{
     font: 20px / 1.5 Oswald, Koulen; 
@@ -98,8 +101,16 @@
     text-align: center;
 }
 .Post .sidebar .container{
-    max-height: 650px;
+    max-height: 600px;
     overflow: auto;
+}
+@-moz-document url-prefix() {
+    .Post .sidebar{
+        height: 610px;
+    }
+    .Post .sidebar .container {
+        max-height: 540px;
+    }
 }
 .Post .sidebar details summary{
     font: 18px / 1.5 Oswald, Bayon;
@@ -125,6 +136,7 @@
     background-color: var(--panel);
     color: rgb(22, 22, 22);
     padding: 15px;
+    
 }
 .Post .main .title{
     font: 24px/1.5 StardosStencil, Limonf3;
@@ -170,6 +182,8 @@
     }
     .Post .sidebar{
         padding: 0 15px;
+        position: relative;
+        height: auto;
     }
     .Post .sidebar .container{
         max-height: 450px;
