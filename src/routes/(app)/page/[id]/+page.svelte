@@ -6,10 +6,12 @@
 
 <Layout {data}>
 <section class="Post region">
-    <div class="main">
-        <h3 class="title">{data.page.title}</h3>
-        <div class="content">
-            {@html data.page.content}
+    <div class="wrapper">
+        <div class="main">
+            <h3 class="title">{data.page.title}</h3>
+            <div class="content">
+                {@html data.page.content}
+            </div>
         </div>
     </div>
     <div class="sidebar">
@@ -62,9 +64,14 @@
 @media only screen and (max-width:600px){
     .Post{
         grid-template-columns: 100%;
+        margin-top: 10px;
+        grid-gap: 10px;
+    }
+    .Post .main{
+        margin: 0 10px;
     }
     .Post .sidebar{
-        padding: 0 15px;
+        padding: 0 10px;
     }
 }
 </style>

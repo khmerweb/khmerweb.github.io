@@ -147,6 +147,9 @@
 :global(.hljs-ln-code)  { /* Target the code container */
     margin-left: 10px !important; /* Adjust as needed */
 }
+:global(.Post .main .content ol){
+    list-style-position: inside;
+}
 :global(.Post .main .content pre){
     padding: 15px 0 0 !important;
 }
