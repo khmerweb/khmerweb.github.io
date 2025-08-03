@@ -29,8 +29,9 @@
 </script>
 
 <svelte:head>
+    
     <link rel="stylesheet" href="/scripts/highlight/styles/devibeans.css">
-    <script src="/scripts/highlight/highlight.js"></script>
+    <script src="/scripts/highlight/highlight10.js"></script>
     <script src="/scripts/highlightjs-line-numbers.min.js"></script>
 </svelte:head>
 
