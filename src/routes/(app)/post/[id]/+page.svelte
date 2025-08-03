@@ -90,7 +90,7 @@
 .Post .sidebar{
     background: rgb(221, 221, 221);
     padding: 10px;
-    height: 570px;
+    height: 670px;
     position: sticky;
     top: 0;
 }
@@ -101,7 +101,7 @@
     text-align: center;
 }
 .Post .sidebar .container{
-    max-height: 500px;
+    max-height: 600px;
     overflow: auto;
 }
 @-moz-document url-prefix() {
