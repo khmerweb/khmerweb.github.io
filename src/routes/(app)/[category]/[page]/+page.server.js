@@ -29,7 +29,7 @@ export async function load({ params }) {
 export async function entries() {
 	const settings = await setup()
     const posts = await getPosts()
-	const categories = [...new Set(posts.map((post) => post.categories).flat())]
+	const categories = [...new Set(posts.map((post) => post.categories))]
 
 	let arr = []
 	for(let category of categories){
