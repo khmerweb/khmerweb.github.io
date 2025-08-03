@@ -101,7 +101,7 @@
     text-align: center;
 }
 .Post .sidebar .container{
-    max-height: 600px;
+    max-height: 550px;
     overflow: auto;
 }
 @-moz-document url-prefix() {
