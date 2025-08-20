@@ -20,6 +20,7 @@
             (d.head || d.body).appendChild(s);
         })();
 
+        hljs.tabReplace = '  '
         hljs.highlightAll()
         hljs.initLineNumbersOnLoad()
         const myElement = document.querySelector('.Post .sidebar .container .active')
@@ -147,6 +148,8 @@
 }
 :global(.hljs-ln-code)  { /* Target the code container */
     margin-left: 10px !important; /* Adjust as needed */
+    tab-size: 4 !important;
+    -moz-tab-size: 4 !important;
 }
 :global(.Post .main .content ol){
     list-style-position: inside;
