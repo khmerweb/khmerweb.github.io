@@ -90,7 +90,7 @@
     padding-bottom: 30px;
 }
 .Post .sidebar{
-    background: rgb(221, 221, 221);
+    background: var(--panel);
     padding: 10px;
     max-height: 100vh;
     overflow: auto;
@@ -124,7 +124,7 @@
     margin-bottom: 0;
 }
 .Post .main{
-    background-color: var(--panel);
+    background-color: rgb(221, 221, 221);
     color: rgb(22, 22, 22);
     padding: 15px;
     
