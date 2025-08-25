@@ -38,9 +38,16 @@
 .Category .container .wrapper a{
     width: 100%;
     display: block;
+    position: relative;
+    padding-top: 140.26%;
 }
 .Category .container .wrapper a img{
     width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    float: left;
 }
 .Category .pagination{
     display: block;
