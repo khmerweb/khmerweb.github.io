@@ -42,6 +42,7 @@ ClassicEditor
 				      // Do not render the CSS class for the plain text code blocks.
 				      { language: 'plaintext', label: 'Plain text', class: '' },
               { language: 'svelte', label: 'Svelte', class: 'svelte' },
+              { language: 'css', label: 'CSS', class: 'css' },
 
 				      // Use the "php-code" class for PHP code blocks.
 				      { language: 'php', label: 'PHP', class: 'php-code' },
