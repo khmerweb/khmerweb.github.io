@@ -37,6 +37,7 @@
 .Post .main{
     background-color: var(--panel);
     padding: 15px;
+    height: 100%;
 }
 .Post .main .title{
     font: 18px/1.5 Oswald, Koulen;
