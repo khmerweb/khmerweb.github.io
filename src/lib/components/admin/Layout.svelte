@@ -17,7 +17,7 @@
 		<div class="wrapper">
 			<aside>
 				<div class='inner'>
-					<a href="/amin/post"><img src="/images/movie.png" alt='' /></a>
+					<a href="/admin/post"><img src="/images/movie.png" alt='' /></a>
 					<span><a href="/admin/post">ការផ្សាយ</a></span>
 					<a href="/admin/page"><img src="/images/page.png" alt=''/></a>
 					<span><a href="/admin/page">ទំព័រ​ស្តាទិក</a></span>
