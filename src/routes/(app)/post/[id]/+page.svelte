@@ -143,6 +143,9 @@
 :global(.Post .main .content mark){
     background: lightgreen;
 }
+:global(.Post .main .content ul){
+    list-style-position: inside;
+}
 :global(.hljs-ln-numbers) { /* Target the line number container */
     padding-right: 10px !important; /* Adjust as needed */
 }
