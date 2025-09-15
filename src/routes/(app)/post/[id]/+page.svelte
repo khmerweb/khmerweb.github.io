@@ -146,13 +146,13 @@
 :global(.Post .main .content ul){
     list-style-position: inside;
 }
-:global(table, th, td){
+:global(.content > .table table, .content > .table table th, .content > .table table td){
     border: 1px solid;
     border-collapse: collapse;
     padding: 10px;
 }
 
-:global(th){
+:global(.content > .table table th){
   font-size: 1.2em;
   font-weight: bold;
   background-color: green;
