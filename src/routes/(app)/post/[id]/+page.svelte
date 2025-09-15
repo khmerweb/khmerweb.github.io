@@ -135,7 +135,7 @@
 }
 .Post .main .content{
     padding: 20px 0;
-    font: 14px/1.5 Courgette, Handwriting;
+    font: 14px/1.5 Vidaloka, Handwriting;
 }
 :global(.Post .main .content img){
     max-width: 100%;
@@ -146,6 +146,20 @@
 :global(.Post .main .content ul){
     list-style-position: inside;
 }
+:global(table, th, td){
+    border: 1px solid;
+    border-collapse: collapse;
+    padding: 10px;
+}
+
+:global(th){
+  font-size: 1.2em;
+  font-weight: bold;
+  background-color: green;
+  color: white;
+  border-color: black;
+}
+
 :global(.hljs-ln-numbers) { /* Target the line number container */
     padding-right: 10px !important; /* Adjust as needed */
 }
