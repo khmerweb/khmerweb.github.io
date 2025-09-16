@@ -51,6 +51,7 @@ ClassicEditor
 				      // Use the "js" class for JavaScript code blocks.
 				      // Note that only the first ("js") class will determine the language of the block when loading data.
 				      { language: 'javascript', label: 'JavaScript', class: 'js javascript js-code' },
+              { language: 'typescript', label: 'TypeScript', class: 'typescript' },
 
 				      // Python code blocks will have the default "language-python" CSS class.
 				      { language: 'python', label: 'Python' }

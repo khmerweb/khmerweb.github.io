@@ -140,8 +140,10 @@
 :global(.Post .main .content img){
     max-width: 100%;
 }
-:global(.Post .main .content mark){
-    background: lightgreen;
+:global(.Post .main .content blockquote){
+    background: rgb(230, 241, 245);
+    padding: 15px;
+    border-left: 5px solid skyblue;
 }
 :global(.Post .main .content ul){
     list-style-position: inside;
