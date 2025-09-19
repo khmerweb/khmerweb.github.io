@@ -30,7 +30,7 @@
 </script>
 
 <svelte:head>
-    <link rel="stylesheet" href="/scripts/highlight/styles/devibeans.css">
+    <link rel="stylesheet" href="/scripts/highlight/styles/stackoverflow-dark.css">
     <script src="/scripts/highlight/highlight10.js"></script>
     <script src="/scripts/highlight/svelte.js"></script>
     <script src="/scripts/highlightjs-line-numbers.min.js"></script>
