@@ -100,7 +100,7 @@
 .Post .sidebar .title{
     font: 20px / 1.5 Oswald, Koulen; 
     padding: 5px 0 10px; 
-    color: darkgreen;
+    color: rgb(10, 104, 141);
     text-align: center;
 }
 .Post .sidebar details summary{
