@@ -135,7 +135,7 @@
 }
 .Post .main .content{
     padding: 20px 0;
-    font: 14px/1.5 Vidaloka, Nokora;
+    font: 16px/1.5 Vidaloka, Nokora;
 }
 :global(.Post .main .content img){
     max-width: 100%;
