@@ -8,7 +8,7 @@ export async function load({ locals }) {
     let postByBooks = []
     for(const title of bookTitles){
         let posts = POSTS.filter((post) => (post.bookTitle.includes(title)))
-        posts = posts.filter((post) => (post.bookThumb !== ''))
+        posts = posts.filter((post) => (post.bookThumb?.length > 0))
         postByBooks.push(posts[0])
     }
 
