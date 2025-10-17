@@ -10,7 +10,7 @@ export async function load({ params }) {
     let postByBooks = []
     for(const title of bookTitles){
         let posts = postsByCategory.filter((post) => (post.bookTitle.includes(title)))
-        posts = posts.filter((post) => (post.bookThumb !== ''))
+        posts = posts.filter((post) => (post.bookThumb?.length > 0))
         postByBooks.push(posts[0])
     }
     
