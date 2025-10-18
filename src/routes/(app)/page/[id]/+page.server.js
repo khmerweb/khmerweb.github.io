@@ -38,7 +38,7 @@ export async function load({ params }) {
     			}
     			continue
 			}
-
+//
 			return randomPosts
 		}
 
